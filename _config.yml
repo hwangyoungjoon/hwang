@@ -1,10 +1,11 @@
 # Site Info
 title: DATA-MAGIC
 tagline: 'Python을 활용한 데이터를 공부'
-description: '내가 그래도 쟤보다는 열심히 살지에서 쟤를 맡고 있습니다.'
+description: 'Python을 활용한 데이터를 공부'
 baseurl: ""
 url: http://hwangyoungjoon.github.io
 logo: '/public/logo.png'
+encoding: utf-8
 
 # Site configurations
 gems:
@@ -20,12 +21,13 @@ paginate: 5
 paginate_path: '/blog/page:num'
 permalink: pretty
 
+
 version: 1.0.0
 
 # About/contact
 author:
   name: DATA_MAGICIAN
-  description: <strong>머신러닝, 딥러닝, 패턴인식</strong>에 관심이 많은 청년입니다..
+  description: 쟤보단 열심히 살고 있어에서 <strong>쟤</strong>를 맡고 있습니다. 
   gravatar: 3c2986ad7ac1f2230ea3596f44563328 # md5 hash of your email address
   contact:
     # linkedin:  https://www.linkedin.com/in/lizhihao
