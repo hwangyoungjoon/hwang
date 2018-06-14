@@ -1,7 +1,7 @@
 # Site Info
-title: DATA-MAGIG
+title: DATA-MAGIC
 tagline: 'Python을 활용한 데이터를 공부'
-description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
+description: '내가 그래도 쟤보다는 열심히 살지에서 '쟤'를 맡고 있습니다.'
 baseurl: ""
 url: http://hwangyoungjoon.github.io
 logo: '/public/logo.png'
@@ -38,23 +38,26 @@ author:
 # Navigation (2nd level links supported)
 nav:
   Home:           
-    - '/'
-  Blog:           
     - '/blog/'
-    - { Categories: '/blog/categories/' }
-    - { Tags: '/blog/tags/' }
+  Categories:           
+    - '/'
+    #- { Categories: '/blog/categories/' }
+    #- { Tags: '/blog/tags/' }
+    - { 프로젝트: 'blog/categories/#project'}
+    - { 장고: 'blog/categories/#django'}
+    - { git: '/blog/categories/#git' }
   About:          
     - '/about/'
-  Github Project: 
-    - 'http://codinfox.github.io/'
+  Search: 
+    - '/search/'
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
-hero:
-  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+#hero:
+  #image: /public/img/we_will_be_giants_by_yalestewart.jpg
+  #caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
 
 # Puglins
 mathjax: true # whether support mathjax
