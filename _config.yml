@@ -41,16 +41,18 @@ author:
 nav:
   Home:           
     - '/blog/'
-  Categories:           
+  Portfolio:
+    - '/portfolio/'
+  Study:           
     - '/'
     #- { Categories: '/blog/categories/' }
     #- { Tags: '/blog/tags/' }
-    - { 프로젝트: 'blog/categories/#project'}
-    - { 장고: 'blog/categories/#django'}
+    - { deep-leaning: 'blog/categories/#project'}
+    - { machine-learning: 'blog/categories/#django'}
     - { git: '/blog/categories/#git' }
   About:          
     - '/about/'
-  Search: 
+  Contact: 
     - '/search/'
 
 # Where are tags and categories displayed
@@ -64,5 +66,5 @@ hero:
 # Puglins
 mathjax: true # whether support mathjax
 google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
-disqus_short_name: 'your_short_name' # leave blank if you don't want disqus
+disqus_short_name: 'Developer & researcher Hwang' # leave blank if you don't want disqus
 
