@@ -1,7 +1,7 @@
 # Site Info
 title: DATA-MAGIC
-tagline: 'Python을 활용한 데이터를 공부'
-description: 'Python을 활용한 데이터를 공부'
+tagline: 'Data driven AI'
+description: 'Python을 활용한 데이터 연구 및 세상 공부'
 baseurl: ""
 url: http://hwangyoungjoon.github.io
 logo: '/public/logo.png'
