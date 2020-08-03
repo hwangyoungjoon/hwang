@@ -1,0 +1,39 @@
+I"C<h1 id="level-1-문자열-다루기-기본">level 1. 문자열 다루기 기본</h1>
+<blockquote>
+  <p>출처 : http://tryhelloworld.co.kr/challenge_codes/99#</p>
+</blockquote>
+
+<h2 id="문제">문제</h2>
+<p>alpha_string46함수는 문자열 s를 매개변수로 입력받습니다.
+s의 길이가 4혹은 6이고, 숫자로만 구성되있는지 확인해주는 함수를 완성하세요.
+예를들어 s가 “a234”이면 False를 리턴하고 “1234”라면 True를 리턴하면 됩니다</p>
+
+<h2 id="풀이">풀이</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">alpha_string46</span><span class="p">(</span><span class="nx">s</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">result</span>
+	<span class="c1">// result = (s.length === 4 || s.length === 6) &amp;&amp; !isNaN(s) : true : false;</span>
+  <span class="k">if</span><span class="p">((</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">4</span> <span class="o">||</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">6</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">s</span><span class="p">)){</span>
+  	<span class="nx">result</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="p">}</span> <span class="k">else</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="다른사람-풀이">다른사람 풀이</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">alpha_string46</span><span class="p">(</span><span class="nx">s</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">((</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">||</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="sr">/^</span><span class="se">[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">+$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">s</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="배운점">배운점</h2>
+<ul>
+  <li><a href="https://opentutorials.org/course/909/5142">정규표현식 익히자</a></li>
+</ul>
+:ET
