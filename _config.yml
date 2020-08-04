@@ -41,9 +41,9 @@ nav:
     - '/'
     #- { Categories: '/blog/categories/' }
     #- { Tags: '/blog/tags/' }
-    - { deep-leaning : 'blog/categories/#deeplearning' }
-    - { algorithms : 'blog/categories/#algorithms' }
-    - { machine-learning : 'blog/categories/#machine-learing' }
+    - { deep-leaning : '/blog/categories/#deeplearning' }
+    - { algorithms : '/blog/categories/#algorithms' }
+    - { machine-learning : '/blog/categories/#machine-learing' }
     - { github manage : '/blog/categories/#git-manage' }
   About:          
     - '/about/'
