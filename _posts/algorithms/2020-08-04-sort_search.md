@@ -2,7 +2,7 @@
 layout: post
 title: 정렬과 탐색
 category: algorithms
-permalink: /algorithm/:year/:month/:day/:title/
+permalink: /algorithms/:year/:month/:day/:title/
 tags: [algorithms, sorting, searching, 선형배열, data-structure]
 comments: true
 ---
