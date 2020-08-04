@@ -1,6 +1,6 @@
 # Site Info
 title: DATA-MAGIC
-tagline: 'Data driven AI'
+tagline: 'AI 연구, 개발 관련 Blog : Til I Learned '
 description: 'Python을 활용한 데이터 연구 및 세상 공부'
 baseurl: ""
 url: http://hwangyoungjoon.github.io
@@ -41,10 +41,10 @@ nav:
     - '/'
     #- { Categories: '/blog/categories/' }
     #- { Tags: '/blog/tags/' }
-    - { deep-leaning: 'blog/categories/#deeplearning'}
-    - { data structures and algorithms: 'blog/categories/#algorithms'}
-    - { machine-learning: 'blog/categories/#machine-learing'}
-    - { github manage: '/blog/categories/#git-manage' }
+    - { deep-leaning : 'blog/categories/#deeplearning' }
+    - { algorithms : 'blog/categories/#algorithms' }
+    - { machine-learning : 'blog/categories/#machine-learing' }
+    - { github manage : '/blog/categories/#git-manage' }
   About:          
     - '/about/'
   Contact: 
@@ -63,3 +63,5 @@ mathjax: true # whether support mathjax
 google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
 disqus_short_name: 'Developer & researcher Hwang' # leave blank if you don't want disqus
 
+gems:
+  - jekyll-paginate

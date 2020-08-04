@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 선형배열
-category: data structures and algorithms
+category: algorithms
+permalink: /algorithm/:year/:month/:day/:title/
 tags: [algorithms, 선형배열, data-structure]
 comments: true
 ---
