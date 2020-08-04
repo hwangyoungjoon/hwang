@@ -1,0 +1,75 @@
+I"�'<h1 id="배열---정렬과-탐색">배열 - 정렬과 탐색</h1>
+<p>같은 종류의 데이터가 줄지어 늘어서 있는것. 파이썬에서 리스트로 제공됨. 원소들을 순서대로 늘어놓은 것.</p>
+
+<h1 id="python-리스트의-정렬">python 리스트의 정렬</h1>
+<ul>
+  <li>sorted() : 내장함수(built-in fuction),정렬된 새로운 리스트를 얻어냄</li>
+  <li>sort() :리스트의 메서드, 해당 리스트를 정렬함</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">85</span><span class="p">]</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">L2</span><span class="p">)</span> 
+<span class="o">&gt;&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">85</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">85</span><span class="p">]</span>
+<span class="n">L</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">L</span><span class="p">)</span> 
+<span class="o">&gt;&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">85</span><span class="p">]</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s">'abcd'</span><span class="p">,</span><span class="s">'xyz'</span><span class="p">,</span><span class="s">'spam'</span><span class="p">]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;&gt;</span> <span class="p">[</span><span class="s">'xyz'</span><span class="p">,</span><span class="s">'abcd'</span><span class="p">,</span><span class="s">'spam'</span><span class="p">]</span>
+<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s">'spam'</span><span class="p">,</span><span class="s">'abcd'</span><span class="p">,</span><span class="s">'xyz'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;&gt;</span> <span class="p">[</span><span class="s">'xyz'</span><span class="p">,</span><span class="s">'spam'</span><span class="p">,</span><span class="s">'abcd'</span><span class="p">]</span>
+
+<span class="n">L</span><span class="o">=</span><span class="p">[{</span><span class="s">'name'</span><span class="p">:</span><span class="s">'john'</span><span class="p">,</span> <span class="s">'score'</span><span class="p">:</span><span class="mi">83</span><span class="p">},{</span><span class="s">'name'</span><span class="p">:</span><span class="s">'Paul'</span><span class="p">,</span> <span class="s">'score'</span><span class="p">:</span><span class="mi">92</span><span class="p">}]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">'score'</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="p">[{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Paul'</span><span class="p">,</span> <span class="s">'score'</span><span class="p">:</span> <span class="mi">92</span><span class="p">},</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'john'</span><span class="p">,</span> <span class="s">'score'</span><span class="p">:</span> <span class="mi">83</span><span class="p">}]</span>
+</code></pre></div></div>
+
+<h1 id="탐색-알고리즘1---선형탐색">탐색 알고리즘(1) - 선형탐색</h1>
+<ul>
+  <li>순차적으로 하나씩 비교하여 찾아냄(모든 요소를 비교해서 찾기 때문에 선형 시간이 걸리 ) o(n)</li>
+  <li>배열의 길이에 비례하는 시간이 걸리므로, 끝일 경우 모든 리스트를 뒤져봐야함</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">linear_search</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="ow">and</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span><span class="n">x</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">linear_search</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span> 
+</code></pre></div></div>
+
+<h1 id="탐색-알고리즘2---이진탐색">탐색 알고리즘(2) - 이진탐색</h1>
+<ul>
+  <li>탐색하려는 리스트가 이미 정렬되어 있는 경우 사용가능</li>
+  <li>divde and conquer 이용 o(log n)</li>
+</ul>
+
+<h1 id="연습문제---이진탐색-구현">연습문제 - 이진탐색 구현</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">while</span> <span class="n">lower</span> <span class="o">&lt;=</span> <span class="n">upper</span><span class="p">:</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="p">(</span><span class="n">lower</span><span class="o">+</span><span class="n">upper</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+        <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">middle</span>
+            <span class="k">break</span>
+        <span class="k">elif</span> <span class="n">L</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+</code></pre></div></div>
+:ET

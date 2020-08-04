@@ -5,19 +5,22 @@ title: About
 
 <p class="message">
 
-# 황 영 준 (HWANG YOUNG JOON)
+# 황 영 준 (HWANG YOUNG JOON) <br>
 
-## Email : mghysokt@cau.ac.kr
+
+## Email : mghysokt@cau.ac.kr <br>
 
 ## Interests : 
 - Computer Vision(object detection, classification, weakly supervised object detection, image segmentation)
 - recommendatation system(machine-learning, deep-learning)
 
 ## Education : 
-- 석사 : 중앙대학교 전자전기공학과 컴퓨터 전공 졸업 (Bigdata & AI 연구실)
-- 학사 : 국민대학교 경제학과 졸업			
+- 석사 : 중앙대학교 전자전기공학과 컴퓨터 전공 졸업 (Bigdata & AI 연구실)<br>
+- 학사 : 국민대학교 경제학과 졸업<br>
 
-## portfolio : <a href="https://drive.google.com/file/d/1DLo8BdfVhj5yOosDqD8V49lwSjSxzmzy/view?usp=sharing">link</a>
+
+## portfolio : <a href="https://drive.google.com/file/d/1DLo8BdfVhj5yOosDqD8V49lwSjSxzmzy/view?usp=sharing">link</a> <br>
+
 
 현재 중앙대학교 Bigdata & ai 연구실에 소속되어 관련 연구를 진행하였습니다. 특히 컴퓨터 비전 분야에서 object detection 부분을 중점으로 연구를 진행하였습니다. 
 </p>
