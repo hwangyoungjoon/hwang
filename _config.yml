@@ -47,8 +47,8 @@ nav:
     - { github manage : '/blog/categories/#git-manage' }
   About:          
     - '/about/'
-  Contact: 
-    - '/search/'
+  # Contact: 
+  #   - '/search/'
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'

@@ -3,7 +3,6 @@ layout: page
 title: About
 ---
 
-<p class="message">
 
 # 황 영 준 (HWANG YOUNG JOON) <br>
 
@@ -23,4 +22,3 @@ title: About
 
 
 현재 중앙대학교 Bigdata & ai 연구실에 소속되어 관련 연구를 진행하였습니다. 특히 컴퓨터 비전 분야에서 object detection 부분을 중점으로 연구를 진행하였습니다. 
-</p>
