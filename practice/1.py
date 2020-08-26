@@ -1,19 +1,16 @@
-def solution(tickets):
-    tic_dic = dict()
-    for s,a in tickets:
-        tic_dic[s] = tic_dic.get(s,[]) + [a]
-    for k in tic_dic.keys():
-        tic_dic[k].sort(reverse=True)
-    
-    stack = ["ICN"]
-    visit = []
-    while len(stack) > 0:
-        top = stack[-1]
-        if len(tic_dic.get(top,[])) == 0: ##this node will be not visited
-            visit.append(stack.pop())
-        else:
-            stack.append(tic_dic[top].pop())
+def solution(citations):
+    answer = 0
+    max_h = max(citations)
+    if max_h ==0:
+        return 0
 
-    return visit[::-1]
+    for i in range(max_h):
+        citation_h = [c for c in citations if c-i>=0]
+         
+        if len(citation_h) <i:
+            return i-1
 
-print(solution([["ICN", "JFK"], ["HND", "IAD"], ["JFK", "HND"]]	))
+
+citation =[0,0,0,9]
+a= solution(citation)
+print(a)
