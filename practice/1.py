@@ -1,16 +1,18 @@
-def solution(citations):
+
+
+def solution(people, limit):
+    
     answer = 0
-    max_h = max(citations)
-    if max_h ==0:
-        return 0
+    people.sort(reverse=True)
+    start = 0
+    end = len(people) - 1
+    while start < end:
+        if people[start]+people[end] <=limit:
+            end -= 1
 
-    for i in range(max_h):
-        citation_h = [c for c in citations if c-i>=0]
-         
-        if len(citation_h) <i:
-            return i-1
+        start += 1
+    return 0
 
-
-citation =[0,0,0,9]
-a= solution(citation)
-print(a)
+people= [70, 50, 80, 50]
+limit = 100
+solution(people, limit)
