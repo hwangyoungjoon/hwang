@@ -20,30 +20,53 @@
 
 # n= 4
 # cost = [[0,1,1], [0,2,2], [1,2,5],[1,3,1], [2,3,8] ]
+def solution(m, n, board):
+    answer = 0
+    for i in range(m):
+        board[i] = list(board[i])
+    while True:
+        remove_box = []
+        for i in range(m-1):
+            for j in range(n-1):
+                if (board[i][j] == board[i][j+1] == board[i+1][j] == board[i+1][j+1]):
 
-# print(solution(n, cost))
+                        remove_box.append((i,j))
+                        remove_box.append((i,j+1))
+                        remove_box.append((i+1,j))
+                        remove_box.append((i+1,j+1))
 
-def solution(N,number):
-    S = [0,{N}]
-    for i in range(2,9):
-        case_set = {int(str(N)*i)}
-        for i_half in range(1,i//2+1):
-            for x in S[i_half]:
-                print(S[i_half])
-                for y in S[i-i_half]:
-                    print(S[i-i_half])
-                    case_set.add(x+y)
-                    case_set.add(x-y)
-                    case_set.add(y-x)
-                    case_set.add(x*y)
-                    if x != 0:
-                        case_set.add(y//x)
-                    if y != 0:
-                        case_set.add(x//y)
-        if number in case_set:
-            return i
-        S.append(case_set)
-    return -1
 
-print(solution(2,11))
+
+        remove_id = list(set(remove_box))
+        if len(remove_id) == 0:
+            break
+        # print(remove_id)
+        # print(remove_box)
+        answer += len(remove_id)
+        for idx in remove_id:
+            i,j = idx
+            print(i,j)
+            board[i][j] = 0
+
+        for i in range(n):
+            for j in range(m-1,0,-1):
+                if board[j][i] == 0:
+                    start = j-1
+                    value = '0'
+                    while(start > -1):
+                        if board[start][i] != 0:
+                            value = board[start][i]
+                            break
+                        start -= 1
+                    if value != '0':
+                        board[j][i] = value
+                        board[start][i] = '0'
+                    else:
+                        break
                     
+    return answer
+                
+    
+            
+    
+print(solution(4,5,	["CCBDE", "AAADE", "AAABF", "CCBBF"]))
