@@ -1,46 +1,32 @@
-def solution(record):
-    answer = []
-    action_list = {'Leave': '님이 나갔습니다.', 'Enter':'님이 들어왔습니다.'}
-    name_dic = {}
-    case_list = []
-    for i in record:
-        records = i.split(' ')
-        action = records[0]
+def solution(expression):
+    operator = ['+', '-', '*']
+    combination = [[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]]
+    nums, operation, result = [], [], []
+    pointer = 0
 
-        if action != 'Leave':
-            name_dic[records[1]] = records[2]
-        if action != 'Change':
-            case_list.append((action,records[1]))
-    for action, id in case_list:
-        answer.append(name_dic[id]+action_list(action))
-    # for idx,data in enumerate(records):
-    #     print(data)
-    #     cmd = data[0]
+    for i, e in enumerate(expression) :
+        if e in operator :
+            nums.append(int(expression[pointer:i]))
+            operation.append(e)
+            pointer = i + 1
+    nums.append(int(expression[pointer:]))
 
-    #     if cmd == "Enter":
-    #         id_key = data[1]
-    #         nick = data[2]
-    #         if id_key not in chat_log :
-    #             message.append("{}님이 들어왔습니다.".format(nick))
-    #             chat_log.append(id_key)
+    for combi in combination:
+        numsArr = nums[:]
+        opArr = operation[:]
+        for c in combi :
+            i = 0
+            while(len(numsArr)>1 and operator[c] in opArr) :
+                op = opArr[i]
+                if op == operator[c] :
+                    del opArr[i]
+                    num1, num2 = numsArr[i:i+2]
+                    del numsArr[i:i+2]
+                    if c == 0 : numsArr.insert(i,num1+num2)
+                    elif c == 1 : numsArr.insert(i,num1-num2)
+                    else : numsArr.insert(i,num1*num2)
+                else : i += 1
+        result.append(abs(numsArr[0]))
+    return sorted(result)[-1]
 
-    #             # message.append("{}님이 들어왔습니다.".format(nick))
-    #             print(message)
-    #             print(chat_log.index(id_key))
-    #         else:
-    #             print(chat_log.index())
-    #             # for i in chat_log.index():
-    #             message.append("{}님이 들어왔습니다.".format(nick))
-    #             print(message)
-                
-    #             print(message)
-    #     elif cmd == "Leave":
-                
-    #             message.append("{}님이 나갔습니다.".format(nick))
-    #             print(message)
-    #     elif cmd =="Change":
-    #         print(message)
-        
-    return answer
-
-solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"])
+solution("100-200*300-500+20")
