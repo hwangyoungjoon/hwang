@@ -1,32 +1,40 @@
-def solution(expression):
-    operator = ['+', '-', '*']
-    combination = [[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]]
-    nums, operation, result = [], [], []
-    pointer = 0
+def check(result):
+    for x,y,arc in result:
+        if arc ==0:#기둥 경우
+            if y == 0 or (x-1,y,1) in result or (x,y,1) in result or (x,y-1,0) in result:
+                continue
+            else: 
+                return False
+        elif arc ==1:# 보인 경우
+            if ((x-1,y,1) in result and (x+1,y,1) in result) or (x,y-1,0) in result or (x+1,y-1,0) in result:
+                continue
+            else:
+                return False
+    return True
 
-    for i, e in enumerate(expression) :
-        if e in operator :
-            nums.append(int(expression[pointer:i]))
-            operation.append(e)
-            pointer = i + 1
-    nums.append(int(expression[pointer:]))
 
-    for combi in combination:
-        numsArr = nums[:]
-        opArr = operation[:]
-        for c in combi :
-            i = 0
-            while(len(numsArr)>1 and operator[c] in opArr) :
-                op = opArr[i]
-                if op == operator[c] :
-                    del opArr[i]
-                    num1, num2 = numsArr[i:i+2]
-                    del numsArr[i:i+2]
-                    if c == 0 : numsArr.insert(i,num1+num2)
-                    elif c == 1 : numsArr.insert(i,num1-num2)
-                    else : numsArr.insert(i,num1*num2)
-                else : i += 1
-        result.append(abs(numsArr[0]))
-    return sorted(result)[-1]
+def solution(n, build_frame):
+    result = set()
+    for a in build_frame:
+        x,y,arc,how = a
+        if how == 1:
+            result.add((x,y,arc))
+            is_valid = check(result)
+            if is_valid:
+                continue
+            else:
+                result.remove(((x,y,arc))
+        else:
+            if (x,y,arc) in result:
+                result.remove((x,y,arc))
+                is_valid = check(result)
+                if is_valid:
+                    continue
+                else:
+                    result.add((x,y,arc))
+                              
+    result = [list(i) for i in result]
+                              
+    return sorted(result, key = lambda x: ([0],x[1],x[2]))
 
-solution("100-200*300-500+20")
+print(5, [[1,0,0,1],[1,1,1,1],[2,1,0,1],[2,2,1,1],[5,0,0,1],[5,1,0,1],[4,2,1,1],[3,2,1,1]])
